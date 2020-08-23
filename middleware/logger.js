@@ -1,4 +1,4 @@
-const moment = require('./node_modules/moment');
+const moment = require('../node_modules/moment');
 function logger(req, res, next) {
 	console.log(`${
 		req.method} : ${
