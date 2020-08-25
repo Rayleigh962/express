@@ -2,9 +2,9 @@
   "name": "app002",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
-    "start": "node index",
+    "start": "node server/index",
     "dev": "nodemon index"
   },
   "repository": {
@@ -20,7 +20,9 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "moment": "^2.27.0"
+    "helmet": "^4.1.0",
+    "moment": "^2.27.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

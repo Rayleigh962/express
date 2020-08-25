@@ -3,12 +3,12 @@ const router = express.Router();
 const data = require('./data.js');
 
 router.get('/', (req, res) => {
-	let id;
-	if(data.length >= id) { 
+	if(data.length >= req.query.id) { 
 		id = req.query.id;
 		res.json(data[parseInt(id) - 1]);
-	} else
+	} else {
 		res.status(400).json({msg: `member with id=${id} not found`});
+	}
 });
 
 router.post('/', (req, res) => {
