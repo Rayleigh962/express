@@ -1,6 +1,8 @@
 'use strict';
 const express = require('express');
+const mongoose = require('mongoose');
 const path = require('path');
+require('dotenv').config();
 
 // middlewares
 const cors = require('cors');
@@ -8,11 +10,17 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const middlewares = require('./middlewares');
 
+// initialize server
 const app = express();
+
+// make database connection
+mongoose.connect(process.env.DATABASE_URL, {
+	useNewUrlParser: true,
+});
 
 app.use(helmet());
 app.use(morgan('common'));
-app.use(cors(/* {origin: 'http://localhost:3000'} */));
+app.use(cors({origin: process.env.CORS_ORIGIN}));
 
 // body paser
 app.use(express.json());
