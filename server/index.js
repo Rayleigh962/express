@@ -6,8 +6,7 @@ const path = require('path');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
-const status404 = require('./middleware/status404');
-const status500 = require('./middleware/status500');
+const middlewares = require('./middlewares');
 
 const app = express();
 
@@ -25,8 +24,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 // routes
 app.use('/api/members', require('./routes/api/members'));
 
-app.use(status404);
-app.use(status500);
+app.use(middlewares.status404);
+app.use(middlewares.status500);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, err => {

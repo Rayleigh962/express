@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Rayleigh962/express#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^4.1.0",
     "moment": "^2.27.0",
